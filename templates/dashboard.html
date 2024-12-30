@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="max-w-4xl mx-auto">
+    <div class="flex justify-between items-center mb-6">
+        <h2 class="text-2xl font-bold text-gray-800">Your Dashboard</h2>
+        <a href="{% url 'upload_resume' %}" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+            Upload New Resume
+        </a>
+    </div>
+
+    {% if analyses %}
+        <div class="bg-white shadow rounded-lg p-6">
+            <h3 class="text-xl font-semibold mb-4">Latest Analysis</h3>
+            <div class="border-t border-gray-200 pt-4">
+                <p class="text-gray-600 mb-2">Target Field: {{ analyses.0.target_field }}</p>
+                
+                <h4 class="font-semibold text-gray-700 mt-4 mb-2">Transferable Skills:</h4>
+                <ul class="list-disc list-inside mb-4">
+                    {% for skill in analyses.0.transferable_skills %}
+                        <li class="text-gray-600">{{ skill }}</li>
+                    {% endfor %}
+                </ul>
+
+                <h4 class="font-semibold text-gray-700 mt-4 mb-2">Suggested Activities:</h4>
+                <ul class="list-disc list-inside">
+                    {% for activity in analyses.0.suggested_activities %}
+                        <li class="text-gray-600">{{ activity }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% else %}
+        <div class="bg-white shadow rounded-lg p-6 text-center">
+            <p class="text-gray-600 mb-4">You haven't uploaded any resumes yet.</p>
+            <a href="{% url 'upload_resume' %}" class="text-blue-500 hover:text-blue-700">
+                Upload your first resume
+            </a>
+        </div>
+    {% endif %}
+</div>
+{% endblock %} 
