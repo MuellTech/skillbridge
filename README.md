@@ -34,24 +34,29 @@ By leveraging AI, SkillBridge enables users to uncover opportunities they might 
    git clone https://github.com/your-username/skillbridge.git  
    cd skillbridge
    
-## Set Up Virtual Environment  
-python -m venv venv  
-source venv/bin/activate  # On Windows: .\venv\Scripts\Activate  
+2. **Set Up Virtual Environment**
+   ```bash 
+   python -m venv venv  
+   source venv/bin/activate  # On Windows: .\venv\Scripts\Activate  
 
-## Install dependencies
-pip install -r requirements.txt  
+3. **Install dependencies**
+   ```bash 
+   pip install -r requirements.txt  
 
-## Set Up Environment Variables
-SECRET_KEY=your_django_secret_key  
-OPENAI_API_KEY=your_openai_api_key  
+4. **Set Up Environment Variables**
+   ```bash 
+   SECRET_KEY=your_django_secret_key  
+   OPENAI_API_KEY=your_openai_api_key  
 
-## Run Migrations
-python manage.py migrate  
+5. **Run Migrations**
+   ```bash 
+   python manage.py migrate  
 
-## Start Development Server
-python manage.py runserver  
+6. **Start Development Server**
+   ```bash 
+   python manage.py runserver
 
-## How It Works  
+ ## How It Works  
 
 1. **Upload Your Resume**  
    Upload your resume in a supported format (PDF, DOC, or DOCX) through the intuitive user interface.  
